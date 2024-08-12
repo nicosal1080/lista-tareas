@@ -5,9 +5,9 @@ Este proyecto es una aplicación simple de Lista de Tareas construida con Spring
 ## Características
 
 - **Agregar Tareas:** Agrega nuevas tareas a la lista de manera dinámica sin recargar la página.
+- **Actualizar Tareas:** Escribe algo en la descripción de la tarea y verás como se actualiza.
 - **Eliminar Tareas:** Elimina tareas de la lista instantáneamente utilizando HTMX y Spring Boot.
 - **Marcar como Completada:** Marca tareas como completadas con actualizaciones en tiempo real.
-- **Gestión de Tareas:** Incluye características adicionales para la gestión de tareas, como limpiar el campo de entrada después de agregar una tarea y ocultar los puntos de viñeta en la lista de tareas.
 
 ## Tecnologías Utilizadas
 
@@ -24,11 +24,10 @@ Este proyecto es una aplicación simple de Lista de Tareas construida con Spring
    git clone https://github.com/nicosal1080/lista-tareas.git
    cd todo-application
 
-
 2. **Construir y ejecutar la aplicación:**
 
+   ```bash
   ./mvnw spring-boot:run
-
 
 3. **Acceder a la aplicación:**
 
