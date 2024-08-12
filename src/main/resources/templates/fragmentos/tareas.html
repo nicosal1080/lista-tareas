@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Inicio</title>
+</head>
+
+<body>
+
+
+<div id="listaTareas" th:fragment="listaTareas">
+    <ul style="list-style-type: none;">
+        <li th:each="tarea : ${tareas}" class="task-container">
+            <form>
+                <!-- Checkbox para cambiar el estado -->
+                <input type="checkbox"
+                       th:checked="${tarea.estaCompletada == 'Y'}"
+                       hx-post="/tareas/completar"
+                       hx-target="#listaTareas" hx-trigger="change"/>
+
+                <!-- Campo oculto para el ID de la tarea -->
+                <input type="hidden" name="id" th:value="${tarea.id}"/>
+
+                <!-- Campo oculto para el estado completado -->
+                <input type="hidden" name="estaCompletada" th:value="${tarea.estaCompletada}"/>
+
+            </form>
+
+            <!-- Formulario separado para actualizar la descripción -->
+            <form>
+                <input type="hidden" name="id" th:value="${tarea.id}"/>
+                <input hx-post="/tareas/actualizar" hx-target="#listaTareas"
+                       hx-trigger="keyup changed delay:1.5s"
+                       type="text" name="nuevaDescripcion"
+                       th:value="${tarea.descripcion}"/>
+
+                <button type="submit" hx-post="/tareas/eliminar"
+                        hx-target="#listaTareas" class="delete-button">❌</button>
+            </form>
+
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

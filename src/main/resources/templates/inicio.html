@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tareas</title>
+  <script src="https://unpkg.com/htmx.org@1.9.2/dist/htmx.min.js"></script>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<h1>Lista de Tareas</h1>
+
+<!-- Formulario para agregar una tarea -->
+<div id="main">
+  <form hx-post="/tareas/agregar" hx-target="#listaTareas"
+        hx-on="htmx:afterRequest:document.getElementById('descripcionTarea').value = ''">
+    <input type="text" name="descripcion" id="descripcionTarea" placeholder="Agregar tarea..."/>
+    <button type="submit">Agregar Tarea</button>
+  </form>
+</div>
+
+<div hx-get="/tareas/obtener" hx-trigger="load" hx-target="#listaTareas"></div>
+
+<!-- Contenedor para la lista de tareas que se actualizará -->
+<div id="listaTareas" th:fragment="listaTareas">
+  <!-- La lista de tareas se cargará aquí -->
+</div>
+
+</body>
+</html>
