@@ -32,3 +32,7 @@ Este proyecto es una aplicación simple de Lista de Tareas construida con Spring
 3. **Acceder a la aplicación:**
 
 Abre tu navegador web y navega a http://localhost:8080.
+
+## YouTube
+
+Para una explicación más a fondo de la aplicación, mira este video https://youtu.be/5kSGZ3hrhjY.
