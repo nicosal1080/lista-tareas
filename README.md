@@ -27,7 +27,7 @@ Este proyecto es una aplicación simple de Lista de Tareas construida con Spring
 2. **Construir y ejecutar la aplicación:**
 
    ```bash
-  ./mvnw spring-boot:run
+   ./mvnw spring-boot:run
 
 3. **Acceder a la aplicación:**
 
